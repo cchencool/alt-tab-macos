@@ -226,6 +226,8 @@ class Windows {
                 !(Preferences.spacesToShow[App.app.shortcutIndex] == .visible && !Spaces.visibleSpaces.contains(window.spaceId)) &&
                 !(Preferences.screensToShow[App.app.shortcutIndex] == .showingAltTab && !window.isOnScreen(screen)) &&
                 (Preferences.showTabsAsWindows || !window.isTabbed))
+            // add this to avoid multi-tab app show mulitple selections.
+            && !window.isTabbed
     }
 }
 
